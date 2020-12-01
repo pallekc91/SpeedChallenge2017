@@ -1,0 +1,6 @@
+https://nanonets.com/blog/optical-flow/
+https://medium.com/weightsandbiases/predicting-vehicle-speed-from-dashcam-video-f6158054f6fd
+https://github.com/jovsa/speed-challenge-2017
+https://courses.cs.washington.edu/courses/cse576/06sp/notes/HarrisDetector.pdf
+https://ieeexplore.ieee.org/document/323794/;jsessionid=5tgFH99z5DYW4OoGYvOf0hZMYKSrlpaivWmO4VMzm83s2QTn3knF!-1920138161
+http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf
