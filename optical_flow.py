@@ -1,7 +1,9 @@
-from utils import to_gray
 import cv2
 import numpy as np
 
+
+def to_gray(img):
+    return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
 def optical_flow(img_1, img_2):
     img_1_gray = to_gray(img_1)

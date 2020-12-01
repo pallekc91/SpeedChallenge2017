@@ -1,6 +1,5 @@
 import numpy as np
 import torch as t
-from train import train
 from optical_flow import optical_flow
 from model import get_nvidia_model
 import cv2
@@ -40,10 +39,6 @@ def change_brightness(image, bright_factor=0.2 + np.random.uniform()):
     return cv2.cvtColor(hsv_image, cv2.COLOR_HSV2RGB)
 
 
-def to_gray(img):
-    return cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-
-
 def reshape(image):
     image_cropped = image[25:375, :]  # clipping the sky and and the interior of car
     image = cv2.resize(image_cropped, (220, 66), interpolation=cv2.INTER_AREA)
@@ -72,7 +67,7 @@ def split_data(data, seed_val=44):
             train_y.append(data[i][1])
     return train_x, train_y, val_x, val_y
 
-
+'''
 def split_data(X, y, seed_val=55):
     train_x = []
     train_y = []
@@ -88,7 +83,7 @@ def split_data(X, y, seed_val=55):
             train_x.append(X[i])
             train_y.append(y[i])
     return train_x, train_y, val_x, val_y
-
+'''
 
 def process_frames(frames_map, targets):
     # you get a map of frames where key is the frame number and the images are RGB
