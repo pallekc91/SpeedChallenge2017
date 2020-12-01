@@ -2,6 +2,7 @@ import torch.nn as nn
 import torch as t
 from utils import get_frames,process_frames, SpeedDataset, split_data, get_targets
 from model import get_nvidia_model
+import sys
 
 
 def train(model, training_generator, device):
@@ -33,9 +34,13 @@ def train(model, training_generator, device):
     return
 
 if __name__ == '__main__':
-    train_path = '/Users/pallekc/Jobs/comma/speed_challenge_2017/data/train.mp4'
-    test_path = '/Users/pallekc/Jobs/comma/speed_challenge_2017/data/test.mp4'
-    train_targets = '/Users/pallekc/Jobs/comma/speed_challenge_2017/data/train.txt'
+
+    if len(sys.argv) != 3:
+        sys.exit("Improper number of args")
+
+    train_path = sys.argv[1]
+    #test_path = '/Users/pallekc/Jobs/comma/speed_challenge_2017/data/test.mp4'
+    train_targets = sys.argv[2]
 
     device = t.device("cuda:0" if t.cuda.is_available() else "cpu")
 
